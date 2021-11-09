@@ -2,13 +2,13 @@ body{
     background-color: black ;
     color: white ;
 }
+a{
+    color:white
+}
 .nav{
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-gap: 10px;
   background: linear-gradient(180deg, rgba(6, 74, 250, 0.91) 0%, rgba(57, 62, 63, 0) 99.99%, rgba(57, 62, 63, 0) 100%);
   padding: 10px;
-}
-a{
-    color:white
 }
