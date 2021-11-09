@@ -5,6 +5,9 @@ body{
 a{
     color:white
 }
+h1 h2{
+    text-align: center;
+}
 .nav{
   display: grid;
   grid-template-columns: auto auto auto auto auto;
@@ -16,4 +19,9 @@ a{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
+    padding: 10px;
+}
+.bordasdasmoedas{
+    border:3px solid white;
+    border-radius: 10px;
 }
