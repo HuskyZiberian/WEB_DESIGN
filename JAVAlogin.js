@@ -5,12 +5,12 @@ function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
 const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
+    '100',
+    '200',
+    '300',
+    '400',
+    '500',
+    '600',
 ]
 
 const data = {
