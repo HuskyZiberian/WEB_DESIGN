@@ -12,13 +12,11 @@ div.container{
   width:95%;
   margin:auto;
 }
-
 .nomedosite{
     font-family: 'Noto Sans JP', sans-serif;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.91) 0%, rgba(6, 74, 250, 0.91) 99.99%, rgba(6, 74, 250, 0.91) 100%);
     text-align: center;
     align-items: center;
-    padding: 10px;
 }
 .nav{
   display: grid;
@@ -29,17 +27,22 @@ div.container{
   align-items: center;
   text-align: center;
 }
-.moedasprincipais{
+/* .moedasprincipais{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
     padding: 10px;
+} */
+.moedasprincipais{
+  display: flex;
+  justify-content: space-between;
 }
 .bordasdasmoedas{
     border:3px solid white;
     border-radius: 10px;
     padding-left: 10px;
-    max-width: 50%;
+    min-width: 32%;
+    margin-top: 10px;
 }
 .open-button {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.91) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(0, 0, 0, 0) 100%);

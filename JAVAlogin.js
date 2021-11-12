@@ -16,10 +16,10 @@ const labels = [
 const data = {
     labels: labels,
     datasets: [{
-      label: 'My First dataset',
+      label: '',
       backgroundColor: "rgb(255, 99, 132)",
       borderColor: "rgb(255, 99, 13)",
-      data: [0, 10, 5, 2, 20, 30, 45],
+      data: [0, 10, 25, 17, 13, 30, 45],
     }]
 }
 
@@ -29,7 +29,15 @@ const config = {
     options: {}
 }
 
-const myChart = new Chart(
-    document.getElementById('myChart'),
+const myChart1 = new Chart(
+    document.getElementById('myChart1'),
+    config
+)
+const myChart2= new Chart(
+    document.getElementById('myChart2'),
+    config
+)
+const myChart3 = new Chart(
+    document.getElementById('myChart3'),
     config
 )
