@@ -8,6 +8,10 @@ a{
 h1 h2{
     text-align: center;
 }
+div.container{
+  width:95%;
+  margin:auto;
+}
 
 .nomedosite{
     font-family: 'Noto Sans JP', sans-serif;
