@@ -5,10 +5,13 @@ body{
 a{
     color: white;
 }
+nav{
+    font-family: 'Noto Sans JP', sans-serif;
+}
 .sidebar {
     height: 100%;
     width: 160px; 
-    position: fixed; 
+    position: static; 
     z-index: 1; 
     top: 0; 
     left: 0;
@@ -16,7 +19,6 @@ a{
     overflow-x: hidden; 
     padding-top: 20px;
 }
-/* The navigation menu links */
 .sidebar a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -24,14 +26,11 @@ a{
     color: #0026ff;
     display: block;
 }
-  
-  /* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
     color: #e70d0d;
 }
-  
-  /* Style page content */
+
 .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
+    margin-left: 160px;
     padding: 0px 10px;
 }
