@@ -26,6 +26,12 @@ th{
   border-bottom: 1px solid white;
   border-top: 1px solid white;
 }
+.positivo{
+  color: green;
+}
+.negativo{
+  color: red;
+}
 .nomedosite{
     font-family: 'Noto Sans JP', sans-serif;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.91) 0%, rgba(6, 74, 250, 0.91) 99.99%, rgba(6, 74, 250, 0.91) 100%);
