@@ -4,9 +4,10 @@ function openForm() {
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
-function trocadecor(){
-    
-}
+/*function trocadecor(){
+    if(){}
+    else(){}
+}*/
 const labels = [
     '100',
     '200',
