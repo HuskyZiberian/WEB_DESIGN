@@ -4,6 +4,9 @@ function openForm() {
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
+function trocadecor(){
+    
+}
 const labels = [
     '100',
     '200',
@@ -19,7 +22,7 @@ const data1 = {
       label: '',
       backgroundColor: "rgb(255, 99, 132)",
       borderColor: "rgb(255, 99, 13)",
-      data: [0, 10, 25, 17, 13, 30, 45],
+      data: [32,15,12,8,15,23,26],
     }]
 }
 
