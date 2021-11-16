@@ -13,7 +13,7 @@ const labels = [
     '600',
 ]
 
-const data = {
+const data1 = {
     labels: labels,
     datasets: [{
       label: '',
@@ -23,21 +23,53 @@ const data = {
     }]
 }
 
-const config = {
+const config1 = {
     type: 'line',
-    data: data,
+    data: data1,
+    options: {}
+}
+
+const data2 = {
+    labels: labels,
+    datasets: [{
+      label: '',
+      backgroundColor: "rgb(255, 99, 132)",
+      borderColor: "rgb(255, 99, 13)",
+      data: [0, 5, 20, 8, 15, 25, 45],
+    }]
+}
+
+const config2 = {
+    type: 'line',
+    data: data2,
+    options: {}
+}
+
+const data3 = {
+    labels: labels,
+    datasets: [{
+      label: '',
+      backgroundColor: "rgb(255, 99, 132)",
+      borderColor: "rgb(255, 99, 13)",
+      data: [0, 8, 15, 7, 25, 17, 28],
+    }]
+}
+
+const config3 = {
+    type: 'line',
+    data: data3,
     options: {}
 }
 
 const myChart1 = new Chart(
     document.getElementById('myChart1'),
-    config
+    config1
 )
 const myChart2= new Chart(
     document.getElementById('myChart2'),
-    config
+    config2
 )
 const myChart3 = new Chart(
     document.getElementById('myChart3'),
-    config
+    config3
 )
