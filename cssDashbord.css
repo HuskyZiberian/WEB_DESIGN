@@ -5,8 +5,17 @@ body{
 a{
     color: white;
 }
-nav{
+.content {
+    display: flex;
+}
+.font{
     font-family: 'Noto Sans JP', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .sidebar {
     height: 100%;
