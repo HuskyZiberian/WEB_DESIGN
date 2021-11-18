@@ -8,7 +8,7 @@ a {
 }
 
 .cartao {
-    background: linear-gradient(274.48deg, rgba(20, 0, 255, 0.2) -3.95%, rgba(255, 0, 0, 0) 112.94%), linear-gradient(173.84deg, rgba(5, 0, 255, 0.2) -5.88%, rgba(255, 0, 184, 0) 102.29%), linear-gradient(266.77deg, rgba(251, 0, 0, 0.56) -17.13%, rgba(251, 0, 0, 0) 106.01%);
+    background: linear-gradient(274.48deg, rgba(20, 0, 255, 0.2) -3.95%, rgba(255, 0, 0, 0.2) 112.94%), linear-gradient(173.84deg, rgba(5, 0, 255, 0.2) -5.88%, rgba(255, 0, 184, 0.2) 102.29%), linear-gradient(266.77deg, rgba(251, 0, 0, 0.56) -17.13%, #FB0000 106.01%);
     border-radius: 22px;
     width: 401px;
     height: 216px;
@@ -47,6 +47,8 @@ a {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    background: linear-gradient(180deg, rgba(6, 74, 250, 0.91) 0%, rgba(57, 62, 63, 0) 99.99%, rgba(57, 62, 63, 0) 100%);
+    border: radius 15px;
 }
 
 .sidebar {
