@@ -1,14 +1,23 @@
-body{
+body {
     background-color: black;
     color: white;
 }
-a{
+
+a {
     color: white;
 }
+
 .content {
     display: flex;
 }
-.font{
+
+.inner-content {
+    width: 100%;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.font {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -17,24 +26,26 @@ a{
     justify-content: space-between;
     width: 100%;
 }
+
 .sidebar {
-    height: 100%;
-    width: 160px; 
-    position: static; 
-    z-index: 1; 
-    top: 0; 
-    left: 0;
-    background-color: #111; 
-    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    width: 65px;
+    background-color: #111;
+    overflow-x: hidden;
     padding-top: 20px;
 }
+
 .sidebar a {
-    padding: 6px 8px 6px 16px;
+    margin: 6px 8px 20px 16px;
     text-decoration: none;
     font-size: 25px;
     color: #0026ff;
     display: block;
 }
+
 .sidebar a:hover {
     color: #e70d0d;
 }
@@ -42,4 +53,10 @@ a{
 .main {
     margin-left: 160px;
     padding: 0px 10px;
+}
+
+.Logout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
