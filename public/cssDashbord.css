@@ -48,7 +48,6 @@ a {
     justify-content: space-between;
     width: 100%;
     background: linear-gradient(180deg, rgba(6, 74, 250, 0.91) 0%, rgba(57, 62, 63, 0) 99.99%, rgba(57, 62, 63, 0) 100%);
-    border: radius 15px;
 }
 
 .sidebar {
