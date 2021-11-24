@@ -1,6 +1,7 @@
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
+
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
@@ -16,10 +17,10 @@ const labels = [
 const data1 = {
     labels: labels,
     datasets: [{
-      label: '',
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(255, 99, 13)",
-      data: [32,15,12,8,15,23,26],
+        label: '',
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 13)",
+        data: [32, 15, 12, 8, 15, 23, 26],
     }]
 }
 
@@ -32,10 +33,10 @@ const config1 = {
 const data2 = {
     labels: labels,
     datasets: [{
-      label: '',
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(255, 99, 13)",
-      data: [0, 5, 20, 8, 15, 25, 45],
+        label: '',
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 13)",
+        data: [0, 5, 20, 8, 15, 25, 45],
     }]
 }
 
@@ -48,10 +49,10 @@ const config2 = {
 const data3 = {
     labels: labels,
     datasets: [{
-      label: '',
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(255, 99, 13)",
-      data: [0, 8, 15, 7, 25, 17, 28],
+        label: '',
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 13)",
+        data: [0, 8, 15, 7, 25, 17, 28],
     }]
 }
 
@@ -65,7 +66,7 @@ const myChart1 = new Chart(
     document.getElementById('myChart1'),
     config1
 )
-const myChart2= new Chart(
+const myChart2 = new Chart(
     document.getElementById('myChart2'),
     config2
 )
