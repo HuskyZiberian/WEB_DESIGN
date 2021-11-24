@@ -13,22 +13,30 @@ const labels1 = [
     "may",
     'jun',
     'july',
+    'ago',
 ];
 const data = {
     labels: labels1,
     datasets: [{
-            label: 'Dataset 1',
-            data: [0, 50, 150, 100, 200, 178, 250],
-            backgroundColor: "rgb(255, 99, 132)",
-            borderColor: "rgb(255, 99, 13)",
+            label: 'Bitcoin',
+            data: [77,94,137,106,227,49,195,213],
+            backgroundColor: "rgb(230, 124, 27)",
+            borderColor: "rgb(230, 124, 27)",
             yAxisID: 'y',
         },
         {
-            label: 'Dataset 2',
-            data: [0, 100, 80, 75, 142, 150, 200],
-            backgroundColor: "rgb(122, 99, 132)",
-            borderColor: "rgb(122, 99, 13)",
-            yAxisID: 'y1',
+            label: 'Etherium',
+            data: [266,207,173,192,245,122,70,126],
+            backgroundColor: "rgb(3, 106, 197)",
+            borderColor: "rgb(3, 106, 197)",
+            yAxisID: 'y',
+        },
+        {
+            label: 'Dogecoin',
+            data: [25,161,114,180,79,142,197,184],
+            backgroundColor: "rgb(252, 230, 58)",
+            borderColor: "rgb(252, 230, 58)",
+            yAxisID: 'y',
         }
     ]
 };
@@ -45,7 +53,7 @@ const config = {
         plugins: {
             title: {
                 display: true,
-                text: 'Chart.js Line Chart - Multi Axis'
+                text: 'Overview'
             }
         },
         scales: {
