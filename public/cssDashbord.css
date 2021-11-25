@@ -84,6 +84,12 @@ a {
     width: 500px;
     height: 100px;
 }
+
+.div-pai {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .div {
     display: flex;
     flex-direction: column;
