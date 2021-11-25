@@ -115,7 +115,7 @@ a {
     transform-origin: right top;
 
     div {
-        display: block;
+        display:null;
         padding: 5px;
         background: #cab;
         transform: rotate(90deg);
