@@ -103,10 +103,12 @@ a {
     border-radius: 10px;
     height: 100px;
     width: 100px;
-    margin-top: 15px;
+    margin: 2rem;
 }
 
 .tamanho {
+    display: flex;
+    flex-direction: column;
     height:800px;
     margin-left: 150px;
     margin-right: 150px;
@@ -114,8 +116,8 @@ a {
 
 .wrapper {
     display: flex;
-    flex-direction: wrap;
-    
+    flex-flow: column wrap;
+    height: 100%;
 }
 
 .market {
