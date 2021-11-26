@@ -10,24 +10,27 @@ a {
     background: linear-gradient(292.53deg, #F2A900 31.56%, rgba(147, 129, 255, 0.75) 97.92%);    
     border-radius: 10px;
     width: 401px;
-    height: 216px;
+    height: 190px;
     font-family: 'Noto Sans JP', sans-serif;
+    padding-left: 10px;
 }
 
 .cartao2 {
     background: linear-gradient(292.53deg, #ECF0F1 31.56%, rgba(147, 129, 255, 0.75) 97.92%);    
     border-radius: 10px;
     width: 401px;
-    height: 216px;
+    height: 190px;
     font-family: 'Noto Sans JP', sans-serif;
+    padding-left: 10px;
 }
 
 .cartao3 {
     background: linear-gradient(292.53deg, #E88484 31.56%, rgba(147, 129, 255, 0.75) 97.92%);  
     border-radius: 10px;
     width: 401px;
-    height: 216px;
+    height: 190px;
     font-family: 'Noto Sans JP', sans-serif;
+    padding-left: 10px;
 }
 
 .content {
