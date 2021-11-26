@@ -95,46 +95,39 @@ a {
     flex-direction: column;
 }
 
-::-webkit-scrollbar {
-    width: 1px;
-    height:1px;
+.squares{
+    background: #FFFFFF;
+    color: #000000;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+    margin-top: 15px;
 }
 
-::-webkit-scrollbar-button {
-    width: 1px;
-    height: 1px;
+.tamanho {
+    height:800px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
-.horizontal-scroll-wrapper {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: calc({250px} + {1px});
-    max-height: 3* 250px;
-    margin: 0;
-    padding-top: 1px;
-    background: #abc;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transform: rotate(-90deg) translateY(250px);
-    transform-origin: right top;
-
-    div {
-        display:null;
-        padding: 5px;
-        background: #cab;
-        transform: rotate(90deg);
-        transform-origin: right top;
-    }
+.wrapper {
+    display: flex;
+    flex-direction: wrap;
+    
 }
 
-.squares {
-    padding: 250px 0 0 0;
+.market {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 17px 25px 17px 24px;
+    background: #5F3CA5;
+    border-radius: 20px;
+}
 
-    div {
-        width: 250px;
-        height: 250px;
-        margin: 10px 0;
-    }
+.profit{
+    background: #3C354A;
+    border-radius: 20px;
 }
