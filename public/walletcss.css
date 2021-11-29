@@ -6,31 +6,44 @@ body {
 a {
     color: white;
 }
-.cartao1 {
+
+.news{
+    background-color:white;
+    color: purple;
+    border-radius: 10px;
+    width: 401px;
+    height: 190px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-left:20px;
+    text-align: center;
+
+}
+
+.ajuste{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    color: black;
+}
+
+.cartao {
+    border-radius: 10px;
+    width: 401px;
+    height: 190px;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-left: 10px;
+}
+
+.cartao:nth-child(2) {
     background: linear-gradient(292.53deg, #F2A900 31.56%, rgba(147, 129, 255, 0.75) 97.92%);    
-    border-radius: 10px;
-    width: 401px;
-    height: 190px;
-    font-family: 'Noto Sans JP', sans-serif;
-    padding-left: 10px;
 }
 
-.cartao2 {
+.cartao:nth-child(3) {
     background: linear-gradient(292.53deg, #ECF0F1 31.56%, rgba(147, 129, 255, 0.75) 97.92%);    
-    border-radius: 10px;
-    width: 401px;
-    height: 190px;
-    font-family: 'Noto Sans JP', sans-serif;
-    padding-left: 10px;
 }
 
-.cartao3 {
+.cartao:nth-child(4) {
     background: linear-gradient(292.53deg, #E88484 31.56%, rgba(147, 129, 255, 0.75) 97.92%);  
-    border-radius: 10px;
-    width: 401px;
-    height: 190px;
-    font-family: 'Noto Sans JP', sans-serif;
-    padding-left: 10px;
 }
 
 .content {
@@ -103,4 +116,5 @@ a {
 .div {
     display: flex;
     flex-direction: column;
+    margin-right: 20px;
 }
