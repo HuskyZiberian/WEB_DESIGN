@@ -1,3 +1,15 @@
+function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+let randomDataArray = () => {
+    let randomNumbers = [];
+    for(let i = 0; i<7; i++) {
+        randomNumbers.push(randomNumber(0,500));
+    }
+    return randomNumbers;
+};
+
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
@@ -20,7 +32,7 @@ const data1 = {
         label: '',
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 13)",
-        data: [32, 15, 12, 8, 15, 23, 26],
+        data: randomDataArray(),
     }]
 }
 
@@ -36,7 +48,7 @@ const data2 = {
         label: '',
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 13)",
-        data: [0, 5, 20, 8, 15, 25, 45],
+        data: randomDataArray(),
     }]
 }
 
@@ -52,7 +64,7 @@ const data3 = {
         label: '',
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 13)",
-        data: [0, 8, 15, 7, 25, 17, 28],
+        data: randomDataArray(),
     }]
 }
 
@@ -74,3 +86,4 @@ const myChart3 = new Chart(
     document.getElementById('myChart3'),
     config3
 )
+

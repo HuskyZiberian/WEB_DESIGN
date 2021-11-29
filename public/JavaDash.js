@@ -1,3 +1,15 @@
+function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+let randomDataArray = () => {
+    let randomNumbers = [];
+    for(let i = 0; i<8; i++) {
+        randomNumbers.push(randomNumber(0,500));
+    }
+    return randomNumbers;
+};
+
 const DATA_COUNT = 7;
 const NUMBER_CFG = {
     count: DATA_COUNT,
@@ -15,25 +27,26 @@ const labels1 = [
     'july',
     'ago',
 ];
+
 const data = {
     labels: labels1,
     datasets: [{
             label: 'Bitcoin',
-            data: [77,94,137,106,227,49,195,213],
+            data: randomDataArray(),
             backgroundColor: "rgb(230, 124, 27)",
             borderColor: "rgb(230, 124, 27)",
             yAxisID: 'y',
         },
         {
             label: 'Etherium',
-            data: [266,207,173,192,245,122,70,126],
+            data: randomDataArray(),
             backgroundColor: "rgb(3, 106, 197)",
             borderColor: "rgb(3, 106, 197)",
             yAxisID: 'y',
         },
         {
             label: 'Dogecoin',
-            data: [25,161,114,180,79,142,197,184],
+            data: randomDataArray(),
             backgroundColor: "rgb(252, 230, 58)",
             borderColor: "rgb(252, 230, 58)",
             yAxisID: 'y',
