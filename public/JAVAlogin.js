@@ -17,6 +17,7 @@ function openForm() {
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
+
 const labels = [
     '100',
     '200',
@@ -26,66 +27,32 @@ const labels = [
     '600',
 ]
 
-const data1 = {
-    labels: labels,
-    datasets: [{
-        label: '',
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 13)",
-        data: randomDataArray(),
-    }]
+function configuration() {   
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: '',
+            backgroundColor: "rgb(255, 99, 132)",
+            borderColor: "rgb(255, 99, 13)",
+            data: randomDataArray(),
+        }]
+    }
+    
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    }
+
+    return config;
 }
 
-const config1 = {
-    type: 'line',
-    data: data1,
-    options: {}
+for(let i = 1; i <= 3; i++) {
+    new Chart(
+        document.getElementById('myChart' + i),
+        configuration()
+    )
 }
-
-const data2 = {
-    labels: labels,
-    datasets: [{
-        label: '',
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 13)",
-        data: randomDataArray(),
-    }]
-}
-
-const config2 = {
-    type: 'line',
-    data: data2,
-    options: {}
-}
-
-const data3 = {
-    labels: labels,
-    datasets: [{
-        label: '',
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 13)",
-        data: randomDataArray(),
-    }]
-}
-
-const config3 = {
-    type: 'line',
-    data: data3,
-    options: {}
-}
-
-const myChart1 = new Chart(
-    document.getElementById('myChart1'),
-    config1
-)
-const myChart2 = new Chart(
-    document.getElementById('myChart2'),
-    config2
-)
-const myChart3 = new Chart(
-    document.getElementById('myChart3'),
-    config3
-)
 
 setInterval(() => {
     for (let i = 1; i < 11; i++) {
