@@ -4,8 +4,8 @@ function randomNumber(min, max) {
 
 let randomDataArray = () => {
     let randomNumbers = [];
-    for(let i = 0; i<8; i++) {
-        randomNumbers.push(randomNumber(0,500));
+    for (let i = 0; i < 8; i++) {
+        randomNumbers.push(randomNumber(0, 500));
     }
     return randomNumbers;
 };
@@ -28,67 +28,75 @@ const labels1 = [
     'ago',
 ];
 
-const data = {
-    labels: labels1,
-    datasets: [{
-            label: 'Bitcoin',
+function configuration() {
+    let moedas = ["Bitcoin", "Etherium", "Dogecoin"];
+    let dataset = [];
+    for (moeda of moedas) {
+        dataset.push({
+            label: moeda,
             data: randomDataArray(),
-            backgroundColor: "rgb(230, 124, 27)",
-            borderColor: "rgb(230, 124, 27)",
+            backgroundColor: `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`,
+            borderColor:  `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`,
             yAxisID: 'y',
-        },
-        {
-            label: 'Etherium',
-            data: randomDataArray(),
-            backgroundColor: "rgb(3, 106, 197)",
-            borderColor: "rgb(3, 106, 197)",
-            yAxisID: 'y',
-        },
-        {
-            label: 'Dogecoin',
-            data: randomDataArray(),
-            backgroundColor: "rgb(252, 230, 58)",
-            borderColor: "rgb(252, 230, 58)",
-            yAxisID: 'y',
-        }
-    ]
-};
-const config = {
-    type: 'line',
-    data: data,
-    options: {
-        responsive: true,
-        interaction: {
-            mode: 'index',
-            intersect: false,
-        },
-        stacked: false,
-        plugins: {
-            title: {
-                display: true,
-                text: 'Overview'
-            }
-        },
-        scales: {
-            y: {
-                type: 'linear',
-                display: true,
-                position: 'left',
-            },
-            y1: {
-                type: 'linear',
-                display: true,
-                position: 'right',
+        });
+    }
+    const data = {
+        labels: labels1,
+        datasets: dataset
+    }
 
-                // grid line settings
-                grid: {
-                    drawOnChartArea: false, // only want the grid lines for one axis to show up
-                },
+    return {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            interaction: {
+                mode: 'index',
+                intersect: false,
             },
+            stacked: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Overview'
+                }
+            },
+            scales: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+
+                    // grid line settings
+                    grid: {
+                        drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    },
+                },
+            }
         }
-    },
+    }
 };
 const myChart = new Chart(
     document.getElementById('myChart'),
-    config
+    configuration()
 )
+
+setInterval(() => {
+    for (let i = 1; i < 8; i++) {
+        let num = randomNumber(-10, 10);
+        let elemento = document.getElementById(`${i}-valor`);
+        elemento.textContent = num.toFixed(2);
+        if (num > 0) {
+            elemento.classList.add("positivo");
+            elemento.classList.remove("negativo");
+        } else {
+            elemento.classList.add("negativo");
+            elemento.classList.remove("positivo");
+        }
+    }
+}, 5000)
