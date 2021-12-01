@@ -87,7 +87,7 @@ const myChart = new Chart(
 )
 
 setInterval(() => {
-    for (let i = 1; i < 8; i++) {
+    for (let i = 1; i < 9; i++) {
         let num = randomNumber(-10, 10);
         let elemento = document.getElementById(`${i}-valor`);
         elemento.textContent = num.toFixed(2);
@@ -100,4 +100,6 @@ setInterval(() => {
         }
     }
 }, 5000)
- /*java teste*/
+
+function markettrend() {
+}
