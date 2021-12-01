@@ -36,7 +36,7 @@ function configuration() {
             label: moeda,
             data: randomDataArray(),
             backgroundColor: `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`,
-            borderColor:  `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`,
+            borderColor: `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`,
             yAxisID: 'y',
         });
     }
@@ -101,5 +101,51 @@ setInterval(() => {
     }
 }, 5000)
 
-function markettrend() {
+function montaTabela() {
+    let tabela = document.createElement("table");
+    let cabeca = document.createElement("thead");
+    let corpo = document.createElement("tbody");
+    tabela.appendChild(cabeca);
+    tabela.appendChild(corpo);
+    criaCabecalho(cabeca);
+    let moedas = ["Bitcoin", "Etherium", "Dogecoin"];
+    let offset = 0;
+    for (moeda of moedas) {
+        criaCorpo(corpo, moeda, offset);
+        offset += 2;
+    }
+    document.getElementById("markettrand").appendChild(tabela);
 }
+
+function criaCabecalho(cabeca) {
+    let linha1 = document.createElement("tr");
+    let header1 = document.createElement("th")
+    header1.innerHTML = "Nome";
+    let header2 = document.createElement("th")
+    header2.innerHTML = "Ultimo Preço";
+    let header3 = document.createElement("th")
+    header3.innerHTML = "24h";
+    linha1.appendChild(header1);
+    linha1.appendChild(header2);
+    linha1.appendChild(header3);
+    cabeca.appendChild(linha1);
+}
+
+function criaCorpo(corpo, moeda, offset) {
+    let linha2 = document.createElement("tr");
+    let body1 = document.createElement("td")
+    body1.innerHTML = moeda;
+    let body2 = document.createElement("td")
+    body2.id = (offset + 1) + '-preco';
+    body2.innerHTML = randomNumber(0, 10000).toFixed(2);
+    let body3 = document.createElement("td")
+    body3.id = (offset + 1) + '-preco';
+    body3.innerHTML = randomNumber(0, 10000).toFixed(2);
+
+    linha2.appendChild(body1);
+    linha2.appendChild(body2);
+    linha2.appendChild(body3);
+    corpo.appendChild(linha2);
+}
+
+montaTabela();
