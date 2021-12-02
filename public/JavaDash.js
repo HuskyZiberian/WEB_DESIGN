@@ -108,7 +108,7 @@ function montaTabela() {
     tabela.appendChild(cabeca);
     tabela.appendChild(corpo);
     criaCabecalho(cabeca);
-    let moedas = ["Bitcoin", "Etherium", "Dogecoin"];
+    let moedas = ["Bitcoin", "Etherium", "Dogecoin","Shiba","Litecoin","BinanceCoin","Tron"];
     let offset = 0;
     for (moeda of moedas) {
         criaCorpo(corpo, moeda, offset);
