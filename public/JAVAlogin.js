@@ -72,9 +72,6 @@ setInterval(() => {
     }
 }, 5000)
 
-consultaPreco();
-setInterval(consultaPreco, 60 * 60 * 1000)
-
 function consultaPreco() {
     let moedas = ["bitcoin", "ethereum", "dogecoin", "shiba-inu", "tether"]
     let xhttp = new XMLHttpRequest();
@@ -82,9 +79,12 @@ function consultaPreco() {
         let elemento = document.getElementById(`${i+1}-preco`);
         xhttp.onload = function () {
             let conteudo = JSON.parse(this.response);
-            elemento.textContent = conteudo.market_data.current_price.usd.toFixed(2);
+            elemento.textContent = conteudo.market_data.current_price.brl.toFixed(2);
         }
         xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i]}`, false);
         xhttp.send();
     }
 }
+
+consultaPreco();
+setInterval(consultaPreco, 60 * 60 * 1000)
