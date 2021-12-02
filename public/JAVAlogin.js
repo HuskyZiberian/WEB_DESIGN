@@ -4,7 +4,7 @@ function randomNumber(min, max) {
 
 let randomDataArray = () => {
     let randomNumbers = [];
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         randomNumbers.push(randomNumber(0, 500));
     }
     return randomNumbers;
@@ -25,19 +25,22 @@ const labels = [
     '400',
     '500',
     '600',
+    '700',
+    '800',
+    '900',
 ]
 
-function configuration() {   
+function configuration() {
     const data = {
         labels: labels,
         datasets: [{
             label: '',
-            backgroundColor: "rgb(255, 99, 132)",
-            borderColor: "rgb(255, 99, 13)",
+            backgroundColor: `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`,
+            borderColor: `rgb(${ randomNumber(0, 255)},${randomNumber(0, 255)}, ${randomNumber(0, 255)})`,
             data: randomDataArray(),
         }]
     }
-    
+
     const config = {
         type: 'line',
         data: data,
@@ -47,7 +50,7 @@ function configuration() {
     return config;
 }
 
-for(let i = 1; i <= 3; i++) {
+for (let i = 1; i <= 3; i++) {
     new Chart(
         document.getElementById('myChart' + i),
         configuration()
@@ -69,10 +72,19 @@ setInterval(() => {
     }
 }, 5000)
 
-setInterval(() => {
-    for(let i = 1; i < 6; i++){
-        let num = randomNumber(0,100000);
-        let elemento = document.getElementById(`${i}-preco`);
-        elemento.textContent = num.toFixed(2);
+consultaPreco();
+setInterval(consultaPreco, 60 * 60 * 1000)
+
+function consultaPreco() {
+    let moedas = ["bitcoin", "ethereum", "dogecoin", "shiba-inu", "tether"]
+    let xhttp = new XMLHttpRequest();
+    for (let i = 0; i < moedas.length; i++) {
+        let elemento = document.getElementById(`${i+1}-preco`);
+        xhttp.onload = function () {
+            let conteudo = JSON.parse(this.response);
+            elemento.textContent = conteudo.market_data.current_price.usd.toFixed(2);
+        }
+        xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i]}`, false);
+        xhttp.send();
     }
-}, 5000)
+}
