@@ -150,12 +150,20 @@ function criaCorpo(corpo, moeda, offset) {
 
 montaTabela();
 
-function linhaprofit (){
-    let criarlinha = document.createElement("p")
-    criarlinha.innerHTML = criarlinha.classList.add("fa fa-arrow-circle-up"),randomNumber(0,10000).toFixed(2)
-    let criarlinha2= document.createElement("p")
-    criarlinha2.innerHTML = criarlinha2.classList.add("fa fa-arrow-circle-down"),randomNumber(0,10000).toFixed(2);
+function linhaprofit(){
+    let criarLinha1 = document.createElement("p")
+    let criarIcon1 = document.createElement("i")
+    let criarLinha2= document.createElement("p")
+    let criarIcon2 = document.createElement("i") 
+
+    criarIcon1.innerHTML = criarIcon1.classList.add("fa fa-arrow-circle-up")
+    criarlinha.innerHTML = randomNumber(0,10000).toFixed(2)
+
+    criarIcon2.innerHTML = criarIcon2.classList.add("fa fa-arrow-circle-down")
+    criarlinha2.innerHTML = randomNumber(0,10000).toFixed(2);
     
+    criarLinha1.appendChild(criarlinha)
+    criarlinha2.appendChild(criarIcon2)
     document.getElementById("profit").appendChild (criarlinha)
     document.getElementById("profit").appendChild (criarlinha2)
 }
