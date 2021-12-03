@@ -171,3 +171,37 @@ function linhaprofit(){
 }
 
 linhaprofit();
+
+
+function verificaPositivo(num, elemento) {
+    if (num > 0) {
+        elemento.classList.add("positivo");
+        elemento.classList.remove("negativo");
+    } else {
+        elemento.classList.add("negativo");
+        elemento.classList.remove("positivo");
+    }
+}
+
+function consultaPreco() {
+    let moedas = ["bitcoin", "ethereum", "dogecoin", "shiba-inu", "binancecoin","litecoin","uniswap","tron"]
+    let xhttp = new XMLHttpRequest();
+    for (let i = 0; i < moedas.length; i++) {
+        let elemento1 = document.getElementById(`${i+1}-preco`);
+        let elemento2 = document.getElementById(`${i+1}-valor`);
+        xhttp.onload = function () {
+            if (this.response) {
+                let conteudo = JSON.parse(this.response);
+                elemento1.textContent = conteudo.market_data.current_price.brl.toFixed(2);
+                let ultimoDia =  conteudo.market_data.price_change_percentage_24h_in_currency.brl.toFixed(2);
+                elemento2.textContent = ultimoDia || 0
+                verificaPositivo(ultimoDia,elemento2)
+            }
+        }
+        xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i]}`, false);
+        xhttp.send();
+    }
+}
+
+consultaPreco()
+setInterval(consultaPreco,10000)
