@@ -153,19 +153,21 @@ montaTabela();
 function linhaprofit(){
     let criarLinha1 = document.createElement("p")
     let criarIcon1 = document.createElement("i")
-    let criarLinha2= document.createElement("p")
+    let criarLinha2 = document.createElement("p")
     let criarIcon2 = document.createElement("i") 
 
-    criarIcon1.innerHTML = criarIcon1.classList.add("fa fa-arrow-circle-up")
-    criarlinha.innerHTML = randomNumber(0,10000).toFixed(2)
+    criarIcon1.classList.add("positivo")
+    criarIcon1.classList.add("fa","fa-arrow-circle-up")
+    criarLinha1.innerHTML = randomNumber(0,10000).toFixed(2)
 
-    criarIcon2.innerHTML = criarIcon2.classList.add("fa fa-arrow-circle-down")
-    criarlinha2.innerHTML = randomNumber(0,10000).toFixed(2);
+    criarIcon2.classList.add("negativo")
+    criarIcon2.classList.add("fa","fa-arrow-circle-down")
+    criarLinha2.innerHTML = randomNumber(0,10000).toFixed(2);
     
-    criarLinha1.appendChild(criarlinha)
-    criarlinha2.appendChild(criarIcon2)
-    document.getElementById("profit").appendChild (criarlinha)
-    document.getElementById("profit").appendChild (criarlinha2)
+    criarLinha1.appendChild(criarIcon1)
+    criarLinha2.appendChild(criarIcon2)
+    document.getElementById("profit").appendChild (criarLinha1)
+    document.getElementById("profit").appendChild (criarLinha2)
 }
 
 linhaprofit();
