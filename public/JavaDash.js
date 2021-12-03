@@ -149,3 +149,15 @@ function criaCorpo(corpo, moeda, offset) {
 }
 
 montaTabela();
+
+function linhaprofit (){
+    let criarlinha = document.createElement("p")
+    criarlinha.innerHTML = criarlinha.classList.add("fa fa-arrow-circle-up"),randomNumber(0,10000).toFixed(2)
+    let criarlinha2= document.createElement("p")
+    criarlinha2.innerHTML = criarlinha2.classList.add("fa fa-arrow-circle-down"),randomNumber(0,10000).toFixed(2);
+    
+    document.getElementById("profit").appendChild (criarlinha)
+    document.getElementById("profit").appendChild (criarlinha2)
+}
+
+linhaprofit();

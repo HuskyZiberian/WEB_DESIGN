@@ -124,3 +124,13 @@ th{
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
 }
+
+@media only screen and (min-width:500px){
+ .moedasprincipais{
+   display:flex;
+   flex-direction: column;
+ }
+ .bordasdasmoedas{
+   width: 100%;
+ }
+}

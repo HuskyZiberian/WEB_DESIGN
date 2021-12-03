@@ -57,32 +57,38 @@ for (let i = 1; i <= 3; i++) {
     )
 }
 
-setInterval(() => {
-    for (let i = 1; i < 11; i++) {
-        let num = randomNumber(-10, 10);
-        let elemento = document.getElementById(`${i}-valor`);
-        elemento.textContent = num.toFixed(2);
-        if (num > 0) {
-            elemento.classList.add("positivo");
-            elemento.classList.remove("negativo");
-        } else {
-            elemento.classList.add("negativo");
-            elemento.classList.remove("positivo");
-        }
-    }
-}, 5000)
-
 function consultaPreco() {
+    let offset = 0;
     let moedas = ["bitcoin", "ethereum", "dogecoin", "shiba-inu", "tether"]
     let xhttp = new XMLHttpRequest();
     for (let i = 0; i < moedas.length; i++) {
-        let elemento = document.getElementById(`${i+1}-preco`);
+        let elemento1 = document.getElementById(`${i+1}-preco`);
+        let elemento2 = document.getElementById(`${offset + 1}-valor`);
+        let elemento3 = document.getElementById(`${offset + 2}-valor`);
         xhttp.onload = function () {
             let conteudo = JSON.parse(this.response);
-            elemento.textContent = conteudo.market_data.current_price.brl.toFixed(2);
+            elemento1.textContent = conteudo.market_data.current_price.brl.toFixed(2);
+            let ultimoDia =  conteudo.market_data.price_change_percentage_24h_in_currency.brl.toFixed(2);
+            elemento2.textContent = ultimoDia
+            verificaPositivo(ultimoDia,elemento2)
+            let semana = conteudo.market_data.price_change_percentage_7d_in_currency.brl.toFixed(2)
+            elemento3.textContent = semana
+            verificaPositivo(semana,elemento3)
         }
         xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i]}`, false);
         xhttp.send();
+        offset += 2;
+    }
+}
+
+
+function verificaPositivo(num, elemento) {
+    if (num > 0) {
+        elemento.classList.add("positivo");
+        elemento.classList.remove("negativo");
+    } else {
+        elemento.classList.add("negativo");
+        elemento.classList.remove("positivo");
     }
 }
 

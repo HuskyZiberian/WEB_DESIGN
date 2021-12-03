@@ -151,3 +151,7 @@ a {
   .negativo{
     color: red;
 }
+
+@media only screen and (min-width:500px){
+
+}

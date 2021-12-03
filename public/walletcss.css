@@ -118,3 +118,7 @@ a {
     flex-direction: column;
     margin-right: 20px;
 }
+
+@media only screen and (min-width:500px){
+
+}
