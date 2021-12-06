@@ -44,7 +44,7 @@ function configuration() {
     const config = {
         type: 'line',
         data: data,
-        options: {}
+        options: {},
     }
 
     return config;
@@ -68,12 +68,12 @@ function consultaPreco() {
         xhttp.onload = function () {
             let conteudo = JSON.parse(this.response);
             elemento1.textContent = conteudo.market_data.current_price.brl.toFixed(2);
-            let ultimoDia =  conteudo.market_data.price_change_percentage_24h_in_currency.brl.toFixed(2);
+            let ultimoDia = conteudo.market_data.price_change_percentage_24h_in_currency.brl.toFixed(2);
             elemento2.textContent = ultimoDia
-            verificaPositivo(ultimoDia,elemento2)
+            verificaPositivo(ultimoDia, elemento2)
             let semana = conteudo.market_data.price_change_percentage_7d_in_currency.brl.toFixed(2)
             elemento3.textContent = semana
-            verificaPositivo(semana,elemento3)
+            verificaPositivo(semana, elemento3)
         }
         xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i]}`, false);
         xhttp.send();
