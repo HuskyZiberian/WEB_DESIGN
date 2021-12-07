@@ -144,6 +144,8 @@ a {
 .profit {
     background: #3C354A;
     border-radius: 20px;
+    margin-top: 20px;
+    padding-left: 20px;
 }
 
 .positivo {
@@ -154,4 +156,14 @@ a {
     color: red;
 }
 
-@media only screen and (max-width:500px) {}
+@media only screen and (max-width:500px) {
+    .chart {
+        height: 500px;
+    }
+    .tamanho{
+        margin-left: 0px;
+    }
+    .tamanho1{
+        margin-left:  0px;
+    }
+}

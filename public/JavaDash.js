@@ -158,11 +158,11 @@ function linhaprofit() {
 
     criarIcon1.classList.add("positivo")
     criarIcon1.classList.add("fa", "fa-arrow-circle-up")
-    criarLinha1.innerHTML = randomNumber(0, 10000).toFixed(2)
+    criarLinha1.innerHTML = consultaPreco.toFixed(2)
 
     criarIcon2.classList.add("negativo")
     criarIcon2.classList.add("fa", "fa-arrow-circle-down")
-    criarLinha2.innerHTML = randomNumber(0, 10000).toFixed(2);
+    criarLinha2.innerHTML = consultaPreco.toFixed(2);
 
     criarLinha1.appendChild(criarIcon1)
     criarLinha2.appendChild(criarIcon2)

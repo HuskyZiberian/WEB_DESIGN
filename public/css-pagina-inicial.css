@@ -161,6 +161,10 @@ label {
   display: none;
 }
 
+.mobile {
+  display: none;
+}
+
 @media screen and (max-width: 500px){
   .nav{
     grid-template-columns: auto;
@@ -184,6 +188,15 @@ label {
   .colunas-desktop {
     display: none;
   }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: grid;
+  }
+
   label {
     display: block;
     cursor: pointer;
