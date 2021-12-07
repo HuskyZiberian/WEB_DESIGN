@@ -134,13 +134,26 @@ th {
   opacity: 1;
 }
 
-@media only screen and (max-width:500px) {
-  .moedasprincipais {
+@media screen and (max-width: 500px){
+  .nav{
+    grid-template-columns: auto;
+    width: 100%;
+  }
+  .nomedosite{
+    width: 100%;
+  }
+  .moedasprincipais{
     display: flex;
     flex-direction: column;
   }
+  .open-button{
+    width: 55px;
+  }
+  .bordasdasmoedas{
+    width: auto;
+  }
 
-  .bordasdasmoedas {
-    width: 100%;
+  .colunas-desktop {
+    display: none;
   }
 }

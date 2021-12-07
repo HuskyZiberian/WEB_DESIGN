@@ -108,7 +108,7 @@ function montaTabela() {
     tabela.appendChild(cabeca);
     tabela.appendChild(corpo);
     criaCabecalho(cabeca);
-    let moedas = ["Bitcoin", "Etherium", "Dogecoin","Shiba","Litecoin","BinanceCoin","Tron"];
+    let moedas = ["Bitcoin", "Etherium", "Dogecoin", "Shiba", "Litecoin", "BinanceCoin", "Tron"];
     let offset = 0;
     for (moeda of moedas) {
         criaCorpo(corpo, moeda, offset);
@@ -150,24 +150,24 @@ function criaCorpo(corpo, moeda, offset) {
 
 montaTabela();
 
-function linhaprofit(){
+function linhaprofit() {
     let criarLinha1 = document.createElement("p")
     let criarIcon1 = document.createElement("i")
     let criarLinha2 = document.createElement("p")
-    let criarIcon2 = document.createElement("i") 
+    let criarIcon2 = document.createElement("i")
 
     criarIcon1.classList.add("positivo")
-    criarIcon1.classList.add("fa","fa-arrow-circle-up")
-    criarLinha1.innerHTML = randomNumber(0,10000).toFixed(2)
+    criarIcon1.classList.add("fa", "fa-arrow-circle-up")
+    criarLinha1.innerHTML = randomNumber(0, 10000).toFixed(2)
 
     criarIcon2.classList.add("negativo")
-    criarIcon2.classList.add("fa","fa-arrow-circle-down")
-    criarLinha2.innerHTML = randomNumber(0,10000).toFixed(2);
-    
+    criarIcon2.classList.add("fa", "fa-arrow-circle-down")
+    criarLinha2.innerHTML = randomNumber(0, 10000).toFixed(2);
+
     criarLinha1.appendChild(criarIcon1)
     criarLinha2.appendChild(criarIcon2)
-    document.getElementById("profit").appendChild (criarLinha1)
-    document.getElementById("profit").appendChild (criarLinha2)
+    document.getElementById("profit").appendChild(criarLinha1)
+    document.getElementById("profit").appendChild(criarLinha2)
 }
 
 linhaprofit();
@@ -184,7 +184,7 @@ function verificaPositivo(num, elemento) {
 }
 
 function consultaPreco() {
-    let moedas = ["bitcoin", "ethereum", "dogecoin", "shiba-inu", "binancecoin","litecoin","uniswap","tron"]
+    let moedas = ["bitcoin", "ethereum", "dogecoin", "shiba-inu", "binancecoin", "litecoin", "uniswap", "tron"]
     let xhttp = new XMLHttpRequest();
     for (let i = 0; i < moedas.length; i++) {
         let elemento1 = document.getElementById(`${i+1}-preco`);
@@ -193,9 +193,9 @@ function consultaPreco() {
             if (this.response) {
                 let conteudo = JSON.parse(this.response);
                 elemento1.textContent = conteudo.market_data.current_price.brl.toFixed(2);
-                let ultimoDia =  conteudo.market_data.price_change_percentage_24h_in_currency.brl.toFixed(2);
+                let ultimoDia = conteudo.market_data.price_change_percentage_24h_in_currency.brl.toFixed(2);
                 elemento2.textContent = ultimoDia || 0
-                verificaPositivo(ultimoDia,elemento2)
+                verificaPositivo(ultimoDia, elemento2)
             }
         }
         xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i]}`, false);
@@ -204,4 +204,4 @@ function consultaPreco() {
 }
 
 consultaPreco()
-setInterval(consultaPreco,10000)
+setInterval(consultaPreco, 10000)
