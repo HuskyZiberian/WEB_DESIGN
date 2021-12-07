@@ -134,13 +134,41 @@ th {
   opacity: 1;
 }
 
+.menu {
+  margin: 0 30px 0 0;
+}
+.menu a {
+  clear: right;
+  text-decoration: none;
+  color: gray;
+  margin: 0 10px;
+  line-height: 70px;
+}
+
+span {
+  color: #54D17A;
+}
+
+label {
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 70px;
+  display: none;
+  width: 26px;
+  float: right;
+}
+#toggle {
+  display: none;
+}
+
 @media screen and (max-width: 500px){
   .nav{
     grid-template-columns: auto;
     width: 100%;
+    justify-content: center;
   }
   .nomedosite{
-    width: 100%;
+    width: 346.28px;
   }
   .moedasprincipais{
     display: flex;
@@ -156,4 +184,23 @@ th {
   .colunas-desktop {
     display: none;
   }
+  label {
+    display: block;
+    cursor: pointer;
+  }
+  .menu {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .menu a {
+    display: block;
+    border-bottom: 1px solid #EAEAEB;
+    margin: 0;
+ 
+  }
+  #toggle:checked + .menu {
+    display: block;
+  }
+
 }
