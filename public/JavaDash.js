@@ -108,13 +108,14 @@ function montaTabela() {
     tabela.appendChild(cabeca);
     tabela.appendChild(corpo);
     criaCabecalho(cabeca);
-    let moedas = ["Bitcoin", "Etherium", "Dogecoin", "Shiba", "Litecoin", "BinanceCoin", "Tron"];
+    let moedas = ["Bitcoin", "Ethereum", "Dogecoin", "Shiba-inu", "Litecoin", "BinanceCoin", "Tron"];
     let offset = 0;
     for (moeda of moedas) {
         criaCorpo(corpo, moeda, offset);
-        offset += 2;
+        offset += 1;
     }
     document.getElementById("markettrand").appendChild(tabela);
+    consultaPreco(moedas, "precoA", "valorA")
 }
 
 function criaCabecalho(cabeca) {
@@ -136,11 +137,11 @@ function criaCorpo(corpo, moeda, offset) {
     let body1 = document.createElement("td")
     body1.innerHTML = moeda;
     let body2 = document.createElement("td")
-    body2.id = (offset + 1) + '-preco';
-    body2.innerHTML = randomNumber(0, 10000).toFixed(2);
+    body2.id = (offset + 1) + '-precoA';
+    // body2.innerHTML = randomNumber(0, 10000).toFixed(2);
     let body3 = document.createElement("td")
-    body3.id = (offset + 1) + '-preco';
-    body3.innerHTML = randomNumber(0, 10000).toFixed(2);
+    body3.id = (offset + 1) + '-valorA';
+    // body3.innerHTML = randomNumber(0, 10000).toFixed(2);
 
     linha2.appendChild(body1);
     linha2.appendChild(body2);
@@ -158,11 +159,11 @@ function linhaprofit() {
 
     criarIcon1.classList.add("positivo")
     criarIcon1.classList.add("fa", "fa-arrow-circle-up")
-    criarLinha1.innerHTML = consultaPreco.toFixed(2)
+    criarLinha1.innerHTML = randomNumber(0, 10000).toFixed(2)
 
     criarIcon2.classList.add("negativo")
     criarIcon2.classList.add("fa", "fa-arrow-circle-down")
-    criarLinha2.innerHTML = consultaPreco.toFixed(2);
+    criarLinha2.innerHTML = randomNumber(0, 10000).toFixed(2);
 
     criarLinha1.appendChild(criarIcon1)
     criarLinha2.appendChild(criarIcon2)
@@ -183,12 +184,11 @@ function verificaPositivo(num, elemento) {
     }
 }
 
-function consultaPreco() {
-    let moedas = ["bitcoin", "ethereum", "dogecoin", "shiba-inu", "binancecoin", "litecoin", "uniswap", "tron"]
+function consultaPreco(moedas, ...sufix) {
     let xhttp = new XMLHttpRequest();
     for (let i = 0; i < moedas.length; i++) {
-        let elemento1 = document.getElementById(`${i+1}-preco`);
-        let elemento2 = document.getElementById(`${i+1}-valor`);
+        let elemento1 = document.getElementById(`${i+1}-${sufix[0]}`);
+        let elemento2 = document.getElementById(`${i+1}-${sufix[1]}`);
         xhttp.onload = function () {
             if (this.response) {
                 let conteudo = JSON.parse(this.response);
@@ -198,10 +198,13 @@ function consultaPreco() {
                 verificaPositivo(ultimoDia, elemento2)
             }
         }
-        xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i]}`, false);
+        xhttp.open("GET", `https://api.coingecko.com/api/v3/coins/${moedas[i].toLowerCase()}`, false);
         xhttp.send();
     }
 }
 
-consultaPreco()
-setInterval(consultaPreco, 10000)
+consultaPreco(["bitcoin", "ethereum", "dogecoin", "shiba-inu", "binancecoin", "litecoin", "uniswap", "tron"], "preco", "valor")
+
+setInterval(() => {
+    consultaPreco(["bitcoin", "ethereum", "dogecoin", "shiba-inu", "binancecoin", "litecoin", "uniswap", "tron"], "preco", "valor")
+ }, 10000);
